@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ITInvestVarna.RouteConfig" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.MvcApplication" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.Attributes.FilterVM.DateTimeAttribute" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attributes\FilterVM\DateTimeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.Attributes.FilterVM.DropDownFilter" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAgAgAAA=</HashCode>
+      <FileName>Attributes\FilterVM\DropDownAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.Attributes.FilterVM.HiddenAttribute" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attributes\FilterVM\HiddenAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.Attributes.FilterVM.SkipAttribute" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attributes\FilterVM\SkipAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.Controllers.ArticlesController" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAQBAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ArticlesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.Controllers.BaseController&lt;E, R, FilterVM, IndexVM, EditVM, OrderBy&gt;" Collapsed="true">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAwAAAAAAAAAAAAAAAEAAAACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\BaseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.Controllers.HomeController" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAgABAAAAAAEQAAAAAQA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.Controllers.UsersController" Collapsed="true">
+    <Position X="2.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgABAAAAAAAAAAAAAAEAAAACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\UsersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.Filters.AuthenticationFilterAttribute" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\AuthenticationFilterAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.Filters.AuthorizeAdminAttribute" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\AuthorizeAdminAtribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.Models.AuthenticationManager" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AuthenticationManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Articles.DetailsVM" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACLAAAAAAAAEkAAAAIAAAoAQAgQAAQAAQAICAAAIAA=</HashCode>
+      <FileName>ViewModels\Articles\DetailsVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Articles.EditVM" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAkAAAAAAAAgIAAAAAAAAAQAACAAQAAA=</HashCode>
+      <FileName>ViewModels\Articles\EditVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Articles.FilterVM" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAkAAACAAAAgCAAAAAAAAAQAAAAAAEAA=</HashCode>
+      <FileName>ViewModels\Articles\FilterVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Articles.IndexVM" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Articles\IndexVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Articles.OrderBy" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAQAAAACAAAA=</HashCode>
+      <FileName>ViewModels\Articles\OrderBy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Home.LoginVM" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Home\LoginVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Home.RegisterVM" Collapsed="true">
+    <Position X="10.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAQAAAAAAgCCAAAAAAAYIAA=</HashCode>
+      <FileName>ViewModels\Home\RegisterVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Home.StatusVM" Collapsed="true">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>ViewModels\Home\StatusVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Shared.BaseEditVM&lt;E&gt;" Collapsed="true">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>ViewModels\Shared\BaseEditVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Shared.BaseFilterVM&lt;E&gt;" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>ViewModels\Shared\BaseFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Shared.BaseIndexVM&lt;E, F, O&gt;" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAEAACAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Shared\BaseIndexVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Shared.BaseOrderBy&lt;E&gt;" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>ViewModels\Shared\BaseOrderBy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Shared.PagerVM" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAADAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Shared\Pager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Users.DetailsVM" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQCAAAAEAAAAEAAYASAAAAgACAAAAAAAIAAA=</HashCode>
+      <FileName>ViewModels\Users\DetailsVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Users.EditVM" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACQAAAAAAAAEAAQACAAAAgACAAAAAAAYIAA=</HashCode>
+      <FileName>ViewModels\Users\EditVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Users.FilterVM" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>ViewModels\Users\Filter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Users.IndexVM" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Users\IndexVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITInvestVarna.ViewModels.Users.OrderBy" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAQAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>ViewModels\Users\OrderBy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ITInvestVarna.ViewModels.Shared.IFilterVM" Collapsed="true">
+    <Position X="10.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Shared\BaseFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

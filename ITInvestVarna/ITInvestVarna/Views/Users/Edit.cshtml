@@ -1,0 +1,88 @@
+﻿@model ITInvestVarna.ViewModels.Users.EditVM
+@{
+    ViewBag.Title = "Edit User " + Model.Id;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content" style="width:100%;height:100%">
+   
+
+
+
+        <div class="contact_section" style="margin-right:4%">
+
+            <h3>Edit Profile</h3>
+            @{
+                string actionLink = (string)this.ViewContext.RouteData.Values["action"];
+            }
+            @using (Html.BeginForm(actionLink, "Users", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.Email)
+                @Html.HiddenFor(model => model.IsAdmin)
+                @Html.HiddenFor(model => model.ActivationCode)
+                @Html.HiddenFor(model => model.IsEmailVerified)
+
+
+                @Html.ValidationMessage("", new { style = "color: red;" })
+
+
+                @Html.LabelFor(model => model.Name)
+                @Html.TextBoxFor(model => model.Name) @Html.ValidationMessageFor(model => model.Name, null, new { style = "color: red;" })
+
+                @Html.LabelFor(model => model.Email)
+                @Html.TextBoxFor(model => model.Email)
+                <button type="button" style=" margin-top:25px">Add new Phone Number</button>
+                <label>Phone Number 1</label><input type="text" />
+
+                <label>Picture</label>
+                <div style="height:0px;overflow:hidden">
+                    <input type="file" id="fileInput" name="fileInput" />
+                </div>
+                <button type="button" onclick="chooseFile();">Upload Picture</button>
+
+                <label>About</label>
+                <textarea style="width:100%"></textarea>
+
+                @Html.LabelFor(model => model.Password)
+                @Html.PasswordFor(model => model.Password) @Html.ValidationMessageFor(model => model.Password, null, new { style = "color: red;" })
+
+                @Html.LabelFor(model => model.ConfirmPassword)
+                @Html.PasswordFor(model => model.ConfirmPassword) @Html.ValidationMessageFor(model => model.ConfirmPassword, null, new { style = "color: red;" })
+
+
+
+
+
+
+            }
+        </div>
+        <div class="contact_section" style="margin-left:4%">
+
+            <h3>Address 1</h3>
+
+
+
+            <label>Street</label><input type="text" />
+            <label>Number</label><input type="text" />
+            <button type="button" style=" margin-top:25px">Add new Phone Number</button>
+            <label>Phone Number 1</label><input type="text" />
+            <label>City</label><select style="width:70%"><option>Varna</option><option>Plovdiv</option><option>Sofia</option></select>
+            <button type="button" style=" margin-top:18px">Add new Address</button>
+
+        </div>
+
+
+   
+    <input type="submit" value="Save" style="display:block;width:90%;height:10%" />
+
+</div>
+
+<script>
+    function chooseFile() {
+        $("#fileInput").click();
+    }
+</script>

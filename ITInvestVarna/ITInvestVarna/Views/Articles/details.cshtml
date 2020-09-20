@@ -1,0 +1,77 @@
+﻿@model ITInvestVarna.ViewModels.Articles.DetailsVM
+@{
+    ViewBag.Title = "" + Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+              
+<div class="content" style="display:block;padding:0">
+
+    <div class="main" style="width:100%;flex-direction:column">
+
+        <article class="name2" style="width:100%">
+
+            <h3 style="width:35%;margin-bottom:0%">@Model.Title</h3> <h3 style="width:35%;margin-bottom:0%">@Model.DateTime</h3>
+            @if (!string.IsNullOrEmpty(Model.ImgPath))
+            {
+            <img src="~/images/@Model.ImgPath" style="width:20%;height:20%;float:right;margin-left:3%;margin-bottom:1%" />
+            }
+            <p style="padding:5%;color:white;padding:0"> @Model.Text</p>
+
+            By<h3> <a href="@Url.Action("Details", "Users")?model.Id=@Model.UserId">@Model.User.Name</a></h3>
+
+        </article>
+
+
+    </div>
+    <div class="main" style="display:block;width:100%;margin:1% 0;padding:1%;">
+
+        <h3 style="float:left">Comments</h3>
+        @{
+            int id = 0;
+            if (ITInvestVarna.Models.AuthenticationManager.LoggedUser != null) { id = ITInvestVarna.Models.AuthenticationManager.LoggedUser.Id; }
+            else { id = 6; }
+        }
+        <article class="name2" style="float:right;width:20%;padding:2%">
+            <a href="@Url.Action("Edit","Comment")?ArticleId=@Model.Id&UserId=@id">Add Comment</a>
+        </article>
+        @if (Model.Comments.Count > 0)
+        {
+
+
+            foreach (Comment comment in Model.Comments)
+            {
+                <div class="main order" style="width:100%;margin-bottom:2%">
+                    <div style="width:30%">
+                        <p>@comment.DateTime </p>
+                        <a href="@Url.Action("Details","Users")?@comment.UserId"> @comment.User.Name</a>
+                    </div>
+
+                    <p style="width:95%;color:white;margin-top:5%">@comment.Text</p>
+                </div>
+            }
+
+        }
+    </div>
+
+    <div class="main" style="display:block;width:100%;margin:1% 0;padding:1%;">
+        @if (Model.KeyWords.Count > 0)
+        {
+            <h3 style="float:left">Key Words</h3>
+            <div class="main order" style="width:100%;margin-bottom:2%;display:block">
+
+                @foreach (KeyWord keyWord in Model.KeyWords)
+                {
+                    <p style="padding:1%;display:inline-block;color:white">
+                        @keyWord.Word
+                    </p>
+
+                }
+
+            </div>
+                }
+
+            </div>
+
+
+        </div>

@@ -1,0 +1,67 @@
+﻿@model ITInvestVarna.ViewModels.Articles.IndexVM
+
+@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="navbar" style="align-items:stretch">
+@{ Html.RenderPartial("/Views/Shared/IndexFilterPartial.cshtml", Model.Filter); }
+</div>
+
+
+
+
+<div class="content" style="flex-direction:column">
+
+   
+
+    <div class="main order" style="width:100%;">
+        <p>Order By </p>
+        <a href="@Url.Action("Index","Articles")?OrderBy.Title=title"> Title</a>
+        <a href="@Url.Action("Index","Articles")?OrderBy.UserId=userid">Company</a>
+        @if (ITInvestVarna.Models.AuthenticationManager.LoggedUser != null && (ITInvestVarna.Models.AuthenticationManager.LoggedUser.IsCompany|| ITInvestVarna.Models.AuthenticationManager.LoggedUser.IsAdmin))
+        {
+
+
+            <a href="@Url.Action("Edit", "Articles",new { UserId= ITInvestVarna.Models.AuthenticationManager.LoggedUser.Id })">Add new</a>
+
+
+        }
+    </div>
+
+
+    @foreach (var item in Model.Items)
+    {
+        <div class="main" style="width:100%;height:250px">
+            <article class="name1">
+                @if (!string.IsNullOrEmpty(item.ImgPath))
+                {
+                    <img src="~/images/@item.ImgPath" style="max-height:90%;max-width:90%">
+                }
+            </article>
+            <article class="name2">
+                <h3 style="width:40%"><a href="@Url.Action("Details")?model.Id=@item.Id">@item.Title</a></h3>
+                <h3 style="width:40%"><a href="@Url.Action("Details","Users",new {Id=item.UserId})"> @item.User.Name</a></h3>
+
+                @if (ITInvestVarna.Models.AuthenticationManager.LoggedUser != null && (item.UserId == ITInvestVarna.Models.AuthenticationManager.LoggedUser.Id || ITInvestVarna.Models.AuthenticationManager.LoggedUser.IsAdmin))
+                {
+                    <a href="@Url.Action("Edit", "Articles", new { Id = item.Id ,UserId=item.UserId })">edit</a>
+                    <a href="@Url.Action("Delete", "Articles", new { Id = item.Id })">delete</a>
+                }
+
+                <p style="height:44px;overflow:hidden"> @item.Text </p>
+                <p><a href="@Url.Action("Details")?model.Id=@item.Id">.read more...</a></p>
+            </article>
+
+
+        </div>
+
+
+    }
+
+</div>
+
+
+@{ Html.RenderPartial("/Views/Shared/PagerPartial.cshtml", Model.Pager); }
+
+   

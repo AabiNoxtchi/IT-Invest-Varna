@@ -1,0 +1,84 @@
+﻿@model ITInvestVarna.ViewModels.Users.DetailsVM
+@{
+    ViewBag.Title = "" + Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content">
+
+   
+    <article class="name1" style="width:100%;display:block;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);margin-top:1%">
+        <h3 style="padding:2%;width:55%">@Model.Name</h3>
+        <img src="~/images/@Model.ImgPath" style="float:right;margin:5%;margin-top:18%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);padding:1%;border:2px solid #66fcf1" />
+        <div style="padding:1%;border:2px solid #66fcf1">
+            <h3 style="margin:0;padding:1% 0">About</h3>
+            <p> @Model.About</p>
+
+            <div sstyle="margin:1%;margin-bottom:1%">
+                @if (Model.addresses.Count > 0)
+                {
+                    <h3 style="margin:0;padding:1% 0">Address</h3>
+                    foreach (Address address in Model.addresses)
+                    {
+
+                        <address style="margin-left:5%">
+                            City : @address.City<br />
+                            Street : @address.Street<br />
+                            Number : @address.Number<br />
+                            @if (address.PhoneNumbers.Count > 0)
+                            {
+                                foreach (PhoneNumber phone in address.PhoneNumbers)
+                                {
+                                    <address>
+
+                                        Phone Number: @phone.Phone_Number
+
+                                    </address>
+
+                                }
+                            }
+                        </address>
+
+                    }
+                }
+            </div>
+        </div>
+    </article>
+
+    
+   
+   
+
+   
+
+
+
+
+</div>
+
+    @{
+        /*
+        <div class="main" style="width:100%;">
+            <article class="name1">
+                @if (!string.IsNullOrEmpty(Model.ImgPath))
+                {
+                    <img src="~/images/@(Model.ImgPath)" style="width:90%;height:55%">
+                }
+            </article>
+            <article class="name2"><h3>@model.Title</h3>
+                <h3> @item.User.Name</h3>
+
+                @if (ITInvestVarna.Models.AuthenticationManager.LoggedUser != null && item.UserId == ITInvestVarna.Models.AuthenticationManager.LoggedUser.Id)
+                {
+                    <a href="@Url.Action("Edit", "Articles", new { Id = item.Id })">edit</a>
+                    <a href="@Url.Action("Delete", "Articles", new { Id = item.Id })">delete</a>
+                }
+
+                <p style="height:100px;overflow:hidden"> @item.Text </p>
+            </article>
+
+
+        </div>
+        */
+    }

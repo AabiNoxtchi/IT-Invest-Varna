@@ -1,0 +1,63 @@
+﻿@model ITInvestVarna.ViewModels.Articles.EditVM
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content" style="height:100%">
+    <section class="main" style="height:100%;">
+        <div id="contact_section" style="width:100%;padding:0 5%">
+            @using (Html.BeginForm("Edit", "Articles", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.Type)
+
+                <h3>Edit Books</h3>
+
+                @Html.LabelFor(model => model.Title)
+                @Html.TextBoxFor(model => model.Title) @Html.ValidationMessageFor(model => model.Title)
+
+                <label>Main Picture</label>
+                <div style="overflow:hidden">
+                <div style="float:left"><img src="~/images/13.jpg" style="width:150px" /></div>
+                <div style="float:left">
+                <div style="height:0px;overflow:hidden">
+                    <input type="file" id="fileInput" name="fileInput" />
+                </div>
+                <button type="button" onclick="chooseFile();">Upload Picture</button>
+                </div>
+            </div>
+                @Html.LabelFor(model => model.Text)
+                @Html.TextAreaFor(model => model.Text,new { style="width:100%"}) @Html.ValidationMessageFor(model => model.Text)
+
+                @Html.LabelFor(model => model.CategoryId)
+                @Html.DropDownListFor(model => model.CategoryId, new SelectList(Model.CategoriesList, "Value", "Text"), "News", new {style = "width:  35%;padding:0 5px"})
+                <div style="overflow:hidden">
+                <label>Add key words seperated with space</label>
+                
+                <textarea readonly style="display:inline-block;width:100%;float:left">KeyWord1 KeyWord2 KeyWord3 ... </textarea>
+                </div>
+                <label>Gallery Pictures</label>               
+                <div style="height:0px;overflow:hidden">
+                    <input type="file" id="filesInput" name="filesInput" multiple />
+                </div>
+                <button type="button" onclick="chooseFiles();">Upload Pictures</button>
+
+
+                <input type="submit" value="Save" />
+
+
+            }
+        </div></section></div>
+
+<script>
+    function chooseFiles() {
+        $("#filesInput").click();
+    }
+</script>

@@ -1,0 +1,262 @@
+/*Sticky Navigation*/
+.content {
+  padding:10px 0
+}
+.sticky {
+  position:fixed;
+  top: 0;
+  width: 100%
+}
+.sticky+.content {
+  padding-top: 60px
+}
+
+
+*{box-sizing:border-box}
+body{
+	margin: 0;
+	padding: 0;	
+	font-size:15px;
+	font-family: 'Open Sans Condensed', sans-serif; 
+	display:flex;
+	flex-direction: column;
+	justify-content:space-around;
+}
+header,footer{
+	height:10%;
+	width:100%;
+	margin:0;
+	padding:1% 0;
+	
+}
+header{background-color:#1f2833}
+#nav,.dropdown-content,footer{background-color: #0b0c10}
+
+/*#nav{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	overflow: hidden
+}
+
+
+/*Header LOGO*/
+header h1{
+	margin:0;
+    font-family: 'Open Sans Condensed', sans-serif; 
+    font-weight: bolder;
+   	text-align: center;
+ 	text-transform: uppercase;
+	letter-spacing: .3em;
+	font-size: 3em;
+	color:#66fcf1
+}
+
+/*Header Nav*/
+.navbar {   
+    width:100%;
+   	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	/*overflow: hidden*/
+}
+
+.navbar a {
+  float:left;
+   	font-size:1em;
+    font-weight: 700;
+    text-align: center;
+    margin:2px;
+   	padding: 18px 30px;
+    text-decoration: none;
+    text-transform:uppercase;
+    color: #3d8f8b; 
+    letter-spacing: .1em
+}
+
+.dropdown .dropdown2{
+    overflow: hidden
+}
+
+.dropdown .dropdown2 .dropbtn .dropbtn2  {
+    font-weight: 700;
+    font-size:1em;
+    letter-spacing: .1em;
+    border: none;
+    outline: none;
+    margin:0 2%;
+    padding: 18px 14px;
+ 	text-transform:uppercase;
+    margin: 0    
+}
+
+
+.navbar a:hover, .dropdown:hover .dropdown2:hover .dropbtn  .dropbtn2 { 
+  background-color:#1f2833;
+ color:#66fcf1
+	
+}
+/*new modal style*/
+.need-relative-parent {
+    position: relative;
+}
+
+.modal {
+    position: absolute; /* Stay in place */
+    z-index: 99; /* Sit on top */
+    left: 0;
+    top: 0;
+}
+
+  /*New Changes  ???*/
+.dropdown-content {
+    display: none;  
+    position:absolute;
+    top:60px;
+    left:31.2%
+    /*here*/
+ 
+    /*background-color: #0b0c10*/
+}
+
+
+.dropdown-content2 {
+    background-color: #0b0c10;
+    display: none;
+    position: absolute;
+    top: 235px;
+    left: 31.2%
+}
+
+.dropdown,.dropdown2{
+   width:170px
+}
+.dropdown-content a ,.dropdown-content2 a {
+    float: none;
+    color: #3d8f8b;
+    text-decoration: none;
+    display: block
+}
+
+    .dropdown-content a:hover dropdown-content2 a:hover {
+        /*background-color: #0b0c10;*/
+        color: #66fcf1;
+       
+    }
+
+
+
+.dropdown:hover .dropdown-content, .dropdown2:hover .dropdown-content2 {
+    color: #66fcf1;
+    background-color: #1f2833;
+    /* display: block*/
+}
+
+/*.dropdown2:hover .dropdown-content2 {
+    color: #66fcf1;
+    background-color: #1f2833;
+  
+}*/
+.selected {
+    background-color: #1f2833;
+    color: #66fcf1;
+}
+
+.content-cover {
+    height:100%;
+    width:100%;
+    position: absolute; /* Stay in place */
+    z-index: 9; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: #1f2833;
+   opacity:.4;
+    display: none
+}
+
+
+
+/*Osnovna stranica Page*/
+.content{
+	/*height:75%;*/
+	width:100%;
+	padding:1% 2%;
+	background-color:#1f2833;
+	display:flex;
+  	flex-wrap:wrap;
+  	justify-content:center;
+  	align-items:stretch;
+  	font-family: 'Open Sans Condensed', sans-serif;
+}
+.main{
+  	width:80%;
+	overflow: auto;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-items: stretch;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin:1px 1px 1px 1px;
+	padding:0;
+  	border-top:2px solid #45a29e;
+  	border-bottom:2px solid #45a29e
+}
+/*section*/
+section {
+    display: flex;
+    justify-content: center;
+}
+
+.left-colomn {
+    width: 80%;
+    padding: 3%;
+   /* display: flex;*/
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.right-colomn a {
+    display: block;
+    font-size: 1em;
+    font-weight: 700;
+    text-align: center;
+    margin: 8% 2%;
+    padding: 10px 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #3d8f8b;
+    letter-spacing: .1em;
+    border-bottom: 2px solid #45a29e
+}
+
+    .right-colomn a:hover {
+        color: #66fcf1;
+        border-bottom: 2px solid #66fcf1;
+    }
+
+.right-colomn h2 {
+    font-size: 1.5em;
+    letter-spacing: .1em;
+    text-transform: capitalize;
+    color: #66fcf1;
+    text-align: center;
+    padding: 0;
+    border-bottom: 2px solid #66fcf1;
+}
+
+.right-colomn {
+    width: 20%;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-left: 2px solid #45a29e;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+/*Footer Nav*/
+
+
+
+/*table*/

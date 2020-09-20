@@ -1,0 +1,49 @@
+﻿@model ITInvestVarna.ViewModels.Users.IndexVM
+
+@{
+    ViewBag.Title = "IT Invest Varna";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ Html.RenderPartial("/Views/Shared/IndexFilterPartial.cshtml", Model.Filter); }
+<div class="main" style="width:100%;padding:2%">
+<article class="name2" style="width:100%;padding:2%">
+    <table>
+        <tr>
+            <td><a href="@Url.Action("Index","Users")?OrderBy.Name=name" style=" color: #3d8f8b">Name</a></td>
+            <td><a href="@Url.Action("Index","Users")?OrderBy.Email=email">Email</a></td>
+
+            <td><a href="#">Company/User</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        @foreach (var item in Model.Items)
+        {
+        <tr>
+            <td><a href="@Url.Action("Details", "Users")?Filter.UserId=@item.Id">@item.Name</a></td>
+            <td>@item.Email</td>
+
+            @if (item.IsCompany)
+            {
+                <td>Company</td>}
+            else
+            {
+                <td>User</td>}
+
+            <td><a href="@Url.Action("Index", "Articles")?Filter.UserId=@item.Id" style="margin:0 15px">articles</a></td>
+
+            <td><a href="@Url.Action("Index", "Comments")?Filter.UserId=@item.Id" style="margin:0 15px">comments</a></td>
+
+            <td><a href="@Url.Action("Edit", "Users", new { Id = item.Id })" style="margin:0 15px">edit</a></td>
+
+
+            <td><a href="@Url.Action("Delete", "Users", new { Id = item.Id })" style="margin:0 15px">delete</a></td>
+
+
+        </tr>
+        }
+    </table>
+  </article>
+    </div>
+        @{ Html.RenderPartial("/Views/Shared/PagerPartial.cshtml", Model.Pager); }

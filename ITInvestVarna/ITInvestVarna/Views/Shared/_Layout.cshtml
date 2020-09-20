@@ -1,0 +1,213 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IT Invest Varna</title>
+    <link href="~/Content/Modal.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet" media="print" />
+    <link href="~/Content/jquery.datetimepicker.css" rel="stylesheet" />
+
+    <link href="~/Content/styleNav-Header.css" rel="stylesheet" />
+    <link href="~/Content/contacts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--ikoni-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <link href="~/Content/home.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.datetimepicker.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
+</head>
+<body>
+    <header style="height:6%;margin:0px;padding:0px;border-bottom:2px solid black">
+
+        
+    </header>
+    <header style="border-top:2px solid white">
+        <h1 style="text-align: left;margin-left:22%;float:left">IT Invest Varna</h1>
+
+        <input type="submit" value="Search" style="float:right;width:7%;padding:0%;height:35px;margin:5px;margin-left:0px;margin-right:1%" />
+        <input type="text" style="float:right;width:12%;padding:0%;height:35px; margin:5px;margin-right:.5%;color:black" placeholder="   Search by Keyword" />
+    </header>
+
+    <div class="need-relative-parent">
+
+        <div id="nav" class="navbar">
+            <a href="@Url.Action("Index", "Home")">Home</a>
+            <a href="@Url.Action("About", "Home")">About us</a>
+
+
+            <a href="#" class="dropbtn">Services <i class="fa fa-caret-down"></i></a>
+
+
+
+            <a href="@Url.Action("Index", "Articles")?model.Filter.Type=News">IT News</a>
+            <a href="@Url.Action("Index", "Articles")?model.Filter.CategoryId=7">Events</a>
+            <a href="@Url.Action("Index", "Articles")?model.Filter.Type=forum">Forum</a>
+
+            @if (ITInvestVarna.Models.AuthenticationManager.LoggedUser == null)
+            {
+                <a href="@Url.Action("Register", "Home")">Register</a>
+                <a href="@Url.Action("Login", "Home")">Login</a>
+            }
+            else
+            {
+                if (ITInvestVarna.Models.AuthenticationManager.LoggedUser.IsAdmin)
+                {
+                    <a href="@Url.Action("Index", "Users")" class="selected">Users</a>
+                }
+                <a href="@Url.Action("EditProfile", "Users")">@ITInvestVarna.Models.AuthenticationManager.LoggedUser.Name</a>
+                <a href="@Url.Action("Logout", "Home")">Logout</a>
+            }
+
+            <div class="dropdown-content dropdown">
+
+                <a href="@Url.Action("Index", "Articles")?model.Filter.CategoryId=5">Work</a>
+                <a href="@Url.Action("Index", "Articles")?model.Filter.CategoryId=6">Internship</a>
+                <div class="dropdown2">
+                    <a href="#" class="dropbtn2" onclick="expand">Academic<i class="fa fa-caret-down"></i></a>
+
+                </div>
+            </div>
+            <div class="dropdown-content2 dropdown2 ">
+                <a href="@Url.Action("Index", "Articles")?model.Filter.CategoryId=1">Universities</a>
+                <a href="@Url.Action("Index", "Articles")?model.Filter.CategoryId=2">Schools</a>
+                <a href="@Url.Action("Index", "Articles")?model.Filter.CategoryId=3">Online Courses</a>
+                <a href="@Url.Action("Index", "Articles")?model.Filter.CategoryId=4">Books</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <br />
+    <div style="position:relative">
+        <div class="content-cover"></div>
+        <div class="content">
+
+            <div class="left-colomn">
+                @RenderBody()
+            </div>
+            <div class="right-colomn">
+                <h2>Categories</h2>
+                <a href="@Url.Action("Index", "Articles")?FilterVM.CategoryId=3">Universities</a>
+                <a href="@Url.Action("Index", "Articles")?FilterVM.CategoryId=4">Schools</a>
+                <a href="@Url.Action("Index", "Articles")?FilterVM.CategoryId=5">Online Courses</a>
+                <a href="@Url.Action("Index", "Articles")?FilterVM.CategoryId=6">Books</a>
+                <a href="@Url.Action("Index", "Articles")?FilterVM.CategoryId=1">Work</a>
+                <a href="@Url.Action("Index", "Articles")?FilterVM.CategoryId=2">Internship</a>
+                <a href="@Url.Action("Index", "Articles")?model.Filter.CategoryId=8">IT News</a>
+                <a href="@Url.Action("Index", "Articles")">Events</a>
+                <a href="@Url.Action("Index", "Articles")">Forum</a>
+                <a href="@Url.Action("Index", "Articles")">All</a>
+
+            </div>
+        </div>
+        <!--Footer Nav-->
+    </div>
+    <footer id="fnav">
+
+        <div id="fnav2">
+            <h5>Services</h5>
+
+            <h3> <a href="#"> Newest </a></h3>
+            <h3> <a href="#"> Events </a></h3>
+            <h3> <a href="#"> Most viewed </a></h3>
+
+
+        </div>
+
+
+
+        <div id="fnav3">
+            <h5>Contacts</h5>
+
+            <h3><a href="#"> About us </a></h3>
+            <h3><a href="#"> Contact us </a></h3>
+            <h3><a href="#"> Top employers </a></h3>
+
+        </div>
+
+        <div id="fnav4">
+            <h5>Students Project</h5>
+
+            <h3> <a href="#">2019 </a></h3>
+            <h3><a href="#">Privacy Policy</a></h3>
+            <h3><a href="#">All rights reserved.</a> </h3>
+
+        </div>
+    </footer>
+
+    <script>
+
+        $(document).ready(function () {
+            $(".dropbtn").click(function () {
+                if ($(".dropdown-content").css("display") == "none") {
+                    $(".dropdown-content").css("display", "block");
+                    $(".dropdown-content").addClass("modal");
+                    $(".content-cover ").css("display", "block");
+
+
+                } else {
+                    $(".dropdown-content").css("display", "none");
+                    $(".content-cover ").css("display", "none");
+                    $(".dropdown-content2").css("display", "none");
+                }
+
+
+            });
+
+            $(".dropbtn2").click(function () {
+                if ($(".dropdown-content2").css("display") == "none") {
+                    $(".dropdown-content2").css("display", "block");
+                    $(".dropdown-content2").addClass("modal");
+
+
+                } else {
+                    $(".dropdown-content2").css("display", "none");
+
+                }
+
+
+            });
+        });
+
+
+                           /* jQuery('.DateTimePicker').datetimepicker({
+                                format: 'm/d/Y H:i',
+                                inline: false,
+                                lang: 'en'
+                            });
+
+                            window.onscroll = function () { myFunction() };
+
+                            var nav = document.getElementById("nav");
+                            var sticky = nav.offsetTop;
+
+                            function myFunction() {
+                                if (window.pageYOffset >= sticky) {
+                                    nav.classList.add("sticky")
+                                } else {
+                                    nav.classList.remove("sticky");
+                                }
+                            };
+
+                            var idxImage = 0;
+                            var myImages = new Array("images/rotate/imageedit_11_5373158451-3.jpg", "images/rotate/DSC_2731-2.jpg", "images/rotate/DSC_2937.jpg", "images/rotate/DSC_2951.jpg", "images/rotate/DSC_3000-2.jpg");
+                            var i = setInterval(changeImage, 3000);
+
+                            function changeImage() {
+                                idxImage++;
+                                if (idxImage == myImages.length)
+                                    idxImage = 0;
+                                document.getElementById('someImage').src = myImages[idxImage];
+                            }*/
+
+    </script>
+</body>
+</html>

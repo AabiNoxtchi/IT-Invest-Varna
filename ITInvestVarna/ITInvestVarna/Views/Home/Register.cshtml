@@ -1,0 +1,57 @@
+﻿
+@model ITInvestVarna.ViewModels.Home.RegisterVM
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content" style="height:100%">
+    <section class="main" style="height:100%;">
+        <div id="contact_section">
+            @if (Convert.ToBoolean(Model.statusVM.status))
+            {
+                if (Model.statusVM.message != null)
+                {
+                    <p>
+                        Success : @Model.statusVM.message @Model.Email
+                    </p>
+
+                }
+            }
+            else
+            {
+                <h3>Register</h3>
+                using (Html.BeginForm("Register", "Home", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    @Html.HiddenFor(Model => Model.statusVM.status)
+                    @Html.HiddenFor(Model => Model.statusVM.message)
+
+                    @Html.LabelFor(model => model.Name)
+                    @Html.TextBoxFor(model => model.Name) @Html.ValidationMessageFor(model => model.Name, null, new { style = "color: red;" })                   
+
+
+                    @Html.LabelFor(model => model.Email)
+
+                    @Html.TextBoxFor(model => model.Email) @Html.ValidationMessageFor(model => model.Email, null, new { style = "color: red;" })
+                    @Html.ValidationMessage("EmailExist", new { style = "color: red;" })
+
+
+
+                    @Html.LabelFor(model => model.Password)
+                    @Html.PasswordFor(model => model.Password) @Html.ValidationMessageFor(model => model.Password, null, new { style = "color: red;" })
+
+                    @Html.LabelFor(model => model.ConfirmPassword)
+                    @Html.PasswordFor(model => model.ConfirmPassword) @Html.ValidationMessageFor(model => model.ConfirmPassword, null, new { style = "color: red;" })
+                    <input type="submit" value="Register" />
+
+
+                }
+            }
+
+        </div>
+    </section>
+</div>
+
